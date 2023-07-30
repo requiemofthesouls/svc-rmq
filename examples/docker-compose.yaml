@@ -1,0 +1,12 @@
+version: '3'
+services:
+  rabbitmq:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rabbitmq
+    volumes:
+      - ./.docker/data/rmq-data:/var/lib/rabbitmq
+    ports:
+      - "127.0.0.1:15672:15672"
+      - "127.0.0.1:5672:5672"
